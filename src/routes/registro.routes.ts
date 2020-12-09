@@ -1,13 +1,13 @@
 import { Router } from 'express';
 import { registroController } from '../controllers/registro.controller';
+import { checkJwt } from '../middlewares/checkJwt';
 
 class RegistroRoutes {
 
     public router: Router = Router();
 
     constructor() {
-        this.router.get('/', registroController.index);
-        this.router.get('/:id', registroController.userEvents);
+        this.router.get('/',checkJwt('Admin'), registroController.index);
     }
 }
     
