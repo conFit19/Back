@@ -1,7 +1,7 @@
 import { Model, DataTypes, Sequelize} from 'sequelize';
 import { database } from "./../database";
 
-export class Users extends Model {
+export class Events extends Model {
 
     public id!: number;
     public name!: string;
@@ -19,7 +19,7 @@ export class Users extends Model {
 
 }
 
-Users.init(
+Events.init(
     {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
