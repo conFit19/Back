@@ -1,4 +1,6 @@
  import  express from 'express';
+ 
+import { eventRoutes } from './routes/events.routes';
 import { registroRoutes } from './routes/registro.routes';
 import { userRoutes } from './routes/user.routes';
  const cors = require('cors');
@@ -16,6 +18,7 @@ app.use(express.json());
 app.use('/registro', registroRoutes.router);
 app.use('/user', userRoutes.router);
 app.use('/merchan', userRoutes.router);
+app.use('/eventos', eventRoutes.router);
 
  
 // Start the server, using the port defined

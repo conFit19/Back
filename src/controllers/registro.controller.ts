@@ -5,7 +5,7 @@ import { Users } from '../models/user.model';
 
 class RegistroController {
     
-    public async registro (req: Request, res: Response) {
+    public async index (req: Request, res: Response) {
 
         try{
             const registro = await Registro.findAll({
@@ -14,6 +14,27 @@ class RegistroController {
                     {model: Events}
                 ],
                 nest: true
+            });
+            res.json(registro);
+        } catch (error) {
+            console.log(error);
+            res.sendStatus(500);
+        }   
+    }
+
+    public async userEvents (req: Request, res: Response) {
+
+        try{
+            const registro = await Registro.findAll({
+                where: {
+                    UserId: req.params.id
+                },
+                include: [
+                    {model: Users},
+                    {model: Events}
+                ],
+                nest: true,
+
             });
             res.json(registro);
         } catch (error) {
