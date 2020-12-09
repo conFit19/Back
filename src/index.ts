@@ -1,4 +1,5 @@
  import  express from 'express';
+import { registroRoutes } from './routes/registro.routes';
  const cors = require('cors');
 
 //  var express = require('express')
@@ -9,6 +10,9 @@ app.set('port', 3000);
 
 app.use(cors());
 app.use(express.json());
+
+// rutas
+app.use('/registro', registroRoutes.router);
 
  
 // Start the server, using the port defined

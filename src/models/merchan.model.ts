@@ -43,7 +43,7 @@ Merchan.init(
         },
     },
     {
-        tableName: "merchan",
+        tableName: "merchans",
         sequelize: database
     }
 );
