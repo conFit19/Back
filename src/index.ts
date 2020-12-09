@@ -15,6 +15,7 @@ app.use(express.json());
 // rutas
 app.use('/registro', registroRoutes.router);
 app.use('/user', userRoutes.router);
+app.use('/merchan', userRoutes.router);
 
  
 // Start the server, using the port defined
