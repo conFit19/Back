@@ -18,9 +18,7 @@ class AuthController {
             if(findUser){
                 const token = jwt.sign(
                     {
-                    email: req.body.email,
-                    password: req.body.password,
-                
+                        email: req.body.email
                     },
                     config.jwtSecret,
                     {

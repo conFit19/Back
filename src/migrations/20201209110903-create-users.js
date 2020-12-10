@@ -18,7 +18,8 @@ module.exports = {
         type: Sequelize.DATE
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique:true
       },
       password: {
         type: Sequelize.STRING
@@ -30,6 +31,9 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       city: {
+        type: Sequelize.STRING
+      },
+      profilePicture: {
         type: Sequelize.STRING
       },
       createdAt: {

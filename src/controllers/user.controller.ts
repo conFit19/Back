@@ -19,9 +19,9 @@ class UsersController {
 
         try{
 
-        const params = req.body;
-        const result = await Users.create(params);
-        res.json(result);
+            const params = req.body;
+            const result = await Users.create(params);
+            res.json(result);
 
         }
         catch (error) {
@@ -36,9 +36,7 @@ class UsersController {
 
             const user = await Users.update(
                 {
-                    
                     name: req.body.name
-                    
                 },
                 { where: { id: req.params.id }
             });

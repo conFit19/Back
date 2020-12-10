@@ -12,6 +12,7 @@ export class Users extends Model {
     public rol!:  string;
     public phone!: number;
     public city!: string;
+    public profilePicture!: string;
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
 
@@ -38,7 +39,8 @@ Users.init(
         },
         email: {
             type: new DataTypes.STRING(128),
-            allowNull: false
+            allowNull: false,
+            unique:true
         },
         password: {
             type: new DataTypes.STRING(128),
@@ -52,7 +54,12 @@ Users.init(
             type: new DataTypes.STRING(128),
             allowNull:false
         },
-
+        city: {
+            type: new DataTypes.STRING(128),
+          },
+        profilePicture: {
+            type: new DataTypes.STRING(128),
+          },
         createdAt: {
             type: new DataTypes.DATE,
             allowNull: false,
