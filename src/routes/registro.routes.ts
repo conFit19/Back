@@ -10,6 +10,7 @@ class RegistroRoutes {
     constructor() {
         this.router.get('/', registroController.index);
         this.router.post('/', registroController.newRegister);
+        this.router.delete('/', registroController.deleteRegister);
     }
 }
     

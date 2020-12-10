@@ -33,6 +33,21 @@ class RegistroController {
             console.log(error);
         }
     }
+
+    public async deleteRegister (req: Request, res: Response) {
+        
+        try{
+            const result = await Registro.destroy({
+                where:{
+                    UserId: req.body.UserId,
+                    EventId: req.body.EventId
+                }
+            })
+            res.send('el usuario se ha borrado del evento');
+        }catch (error) {
+
+        }
+    }
  
 }
 
