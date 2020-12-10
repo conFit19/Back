@@ -22,7 +22,18 @@ class RegistroController {
         }   
     }
 
-    
+    public async newRegister (req: Request, res: Response){
+        try{
+
+            const params = req.body;
+            const result = await Registro.create(params);
+            res.json(result);
+
+        }catch (error){
+            console.log(error);
+        }
+    }
+ 
 }
 
 export const registroController = new RegistroController();

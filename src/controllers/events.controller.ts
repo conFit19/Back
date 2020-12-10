@@ -19,7 +19,6 @@ class EventsController {
             const online = await Events.findAll({ where: { place: "online" }});
             res.json(online);
             
-
         }
         catch(error){
             console.log(error);
@@ -31,7 +30,6 @@ class EventsController {
             const presencial = await Events.findAll({ where: { place:["madrid","barcelona","valencia"]}});
             res.json(presencial);
             
-
         }
         catch(error){
             console.log(error);

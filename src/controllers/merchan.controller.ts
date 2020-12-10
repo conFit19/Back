@@ -36,9 +36,7 @@ class MerchanController {
 
             const user = await Merchan.update(
                 {
-                    
                     product: req.body.product
-                    
                 },
                 { where: { id: req.params.id }
             });

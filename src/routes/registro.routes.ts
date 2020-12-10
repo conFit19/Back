@@ -6,8 +6,10 @@ class RegistroRoutes {
 
     public router: Router = Router();
 
+    // checkJwt('Admin') añadir 
     constructor() {
-        this.router.get('/',checkJwt('Admin'), registroController.index);
+        this.router.get('/', registroController.index);
+        this.router.post('/', registroController.newRegister);
     }
 }
     
