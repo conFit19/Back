@@ -45,7 +45,7 @@ class RegistroController {
             })
             res.send('el usuario se ha borrado del evento');
         }catch (error) {
-
+            console.log(error);
         }
     }
  
