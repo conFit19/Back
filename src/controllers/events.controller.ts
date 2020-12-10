@@ -14,6 +14,31 @@ class EventsController {
         }   
     }
 
+    public async onlineEvents(req:Request,res:Response){
+        try{
+            const online = await Events.findAll({ where: { place: "online" }});
+            res.json(online);
+            
+
+        }
+        catch(error){
+            console.log(error);
+            res.sendStatus(500)
+        }
+    }
+    public async presencialEvents(req:Request,res:Response){
+        try{
+            const presencial = await Events.findAll({ where: { place:["madrid","barcelona","valencia"]}});
+            res.json(presencial);
+            
+
+        }
+        catch(error){
+            console.log(error);
+            res.sendStatus(500)
+        }
+    }
+
     public async createEvent (req: Request, res: Response) {
         
         try{

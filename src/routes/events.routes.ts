@@ -10,6 +10,8 @@ class EventRouter {
         this.router.post('/', eventsController.createEvent);
         this.router.delete('/:id', eventsController.deleteEvent);
         this.router.put('/:id', eventsController.updateEvent);
+        this.router.get('/online',eventsController.onlineEvents);
+        this.router.get('/presencial',eventsController.presencialEvents)
     }
 }
     
