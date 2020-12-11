@@ -22,6 +22,24 @@ class RegistroController {
         }   
     }
 
+    public async userEvents (req: Request, res: Response) {
+
+        try{
+            const registro = await Registro.findAll({
+                where: { UserId: req.body.UserId },
+                include: [
+                    {model: Events}
+                ],
+                nest: true
+            });
+            res.json(registro);
+        } catch (error) {
+            console.log(error);
+            res.sendStatus(500);
+        }   
+    }
+
+
     public async newRegister (req: Request, res: Response){
         try{
 

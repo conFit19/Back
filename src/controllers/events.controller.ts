@@ -13,6 +13,18 @@ class EventsController {
             res.sendStatus(500);
         }   
     }
+    public async myEvents (req: Request, res: Response) {
+
+        try{
+            const myEvents = await Events.findAll({ 
+                where: { organizer: req.body.organizer },
+                raw: true});
+            res.json(myEvents);
+        } catch (error) {
+            console.log(error);
+            res.sendStatus(500);
+        }   
+    }
 
     public async onlineEvents(req:Request,res:Response){
         try{

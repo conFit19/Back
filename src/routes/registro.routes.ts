@@ -9,6 +9,7 @@ class RegistroRoutes {
     // checkJwt('Admin') añadir 
     constructor() {
         this.router.get('/', registroController.index);
+        this.router.get('/userEvents', registroController.userEvents);
         this.router.post('/', registroController.newRegister);
         this.router.delete('/', registroController.deleteRegister);
     }
