@@ -7,6 +7,7 @@ class UserRoutes {
 
     constructor() {
         this.router.get('/', userController.index);
+        this.router.get('/:id', userController.userProfile);
         this.router.post('/', userController.create);
         this.router.put('/:id', userController.update);
         this.router.delete('/', userController.destroy);

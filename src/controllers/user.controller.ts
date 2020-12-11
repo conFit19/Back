@@ -15,6 +15,19 @@ class UsersController {
             res.sendStatus(500);
         }   
     }
+    public async userProfile (req: Request, res: Response) {
+
+        try{
+            const user = await Users.findAll({
+                where: { id: req.params.id },
+                raw: true
+            });
+            res.json(user);
+        } catch (error) {
+            console.log(error);
+            res.sendStatus(500);
+        }   
+    }
     public async create (req: Request, res: Response) {
 
         try{
