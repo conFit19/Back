@@ -1,5 +1,7 @@
 import { Router } from 'express';
 import { merchanController } from '../controllers/merchan.controller';
+import { checkJwt } from '../middlewares/checkJwt';
+
 
 class MerchanRoutes {
 
@@ -7,7 +9,7 @@ class MerchanRoutes {
 
     constructor() {
         this.router.get('/', merchanController.index);
-        this.router.post('/', merchanController.create);
+        this.router.post('/',checkJwt('Admin'), merchanController.create);
         this.router.put('/:id', merchanController.update);
         this.router.delete('/', merchanController.destroy);
 }
