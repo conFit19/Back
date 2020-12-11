@@ -12,6 +12,8 @@ import { Users } from './models/user.model';
 
 import multer from 'multer';
 import path from 'path';
+import { comprasController } from './controllers/compras.controller';
+import { comprasRoutes } from './routes/compras.routes';
 
 // Configuración de guardado que multer debe aplicar al ponerlo en uso
 const storage = multer.diskStorage({
@@ -47,6 +49,7 @@ app.use('/user', userRoutes.router);
 app.use('/merchan', userRoutes.router);
 app.use('/eventos', eventRoutes.router);
 app.use('/auth', authRoutes.router);
+app.use('/compras',comprasRoutes.router)
 
 
 app.post('/single-upload/:email', upload.single('file'), async (req, res) => {

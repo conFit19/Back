@@ -21,7 +21,6 @@ class RegistroController {
             res.sendStatus(500);
         }   
     }
-
     public async userEvents (req: Request, res: Response) {
 
         try{
@@ -38,6 +37,7 @@ class RegistroController {
             res.sendStatus(500);
         }   
     }
+
 
 
     public async newRegister (req: Request, res: Response){
@@ -64,6 +64,17 @@ class RegistroController {
             res.send('el usuario se ha borrado del evento');
         }catch (error) {
             console.log(error);
+        }
+    }
+    public async onlineEvents(req:Request,res:Response){
+        try{
+            const online = await Events.findAll({ where: { place: "online" }});
+            res.json(online);
+            
+        }
+        catch(error){
+            console.log(error);
+            res.sendStatus(500)
         }
     }
  
