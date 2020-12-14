@@ -39,7 +39,7 @@ class UsersController {
         }
         catch (error) {
 
-            res.json(error)
+            res.sendStatus(500).json(error)
 
         }
     }
