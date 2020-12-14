@@ -1,7 +1,7 @@
 {
-  "name": "todolist-backend",
+  "name": "confit-backend",
   "version": "1.0.0",
-  "description": "to do list with backend",
+  "description": "confit backend",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
