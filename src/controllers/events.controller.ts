@@ -28,7 +28,7 @@ class EventsController {
 
     public async onlineEvents(req:Request,res:Response){
         try{
-            const online = await Events.findAll({ where: { place: "online" }});
+            const online = await Events.findAll({ where: { place: "Online" }});
             res.json(online);
             
         }
@@ -39,7 +39,7 @@ class EventsController {
     }
     public async presencialEvents(req:Request,res:Response){
         try{
-            const presencial = await Events.findAll({ where: { place:["madrid","barcelona","valencia"]}});
+            const presencial = await Events.findAll({ where: { place:["Madrid","Barcelona","Valencia"]}});
             res.json(presencial);
             
         }

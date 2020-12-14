@@ -60,7 +60,7 @@ Events.init(
         },
         organizer: {
             type: new DataTypes.STRING(128),
-            allowNull:false
+            allowNull:true
         },
         age: {
             type: new DataTypes.NUMBER,
