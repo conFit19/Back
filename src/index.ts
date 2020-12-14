@@ -5,6 +5,7 @@ import { authRoutes } from './routes/auth.routes';
 import { eventRoutes } from './routes/events.routes';
 import { registroRoutes } from './routes/registro.routes';
 import { userRoutes } from './routes/user.routes';
+import { merchanRoutes } from './routes/merchan.routes';
 
 // models
 import { Users } from './models/user.model';
@@ -40,13 +41,15 @@ app.set('port', 3000);
 // lo que hay dentro de public es el contenido al que podemos acceder desde localhost:3000
 app.use(express.static(__dirname + '/public'));
 
+
+
 app.use(cors());
 app.use(express.json());
 
 // rutas
 app.use('/registro', registroRoutes.router);
 app.use('/user', userRoutes.router);
-app.use('/merchan', userRoutes.router);
+app.use('/merchan', merchanRoutes.router);
 app.use('/eventos', eventRoutes.router);
 app.use('/auth', authRoutes.router);
 app.use('/compras',comprasRoutes.router)
