@@ -100,6 +100,18 @@ class EventsController {
         }
     }
 
+    public async detailEvent(req:Request,res:Response){
+        try{
+            const detail = await Events.findAll({ where: { id: req.params.id }});
+            res.json(detail);
+            
+        }
+        catch(error){
+            console.log(error);
+            res.sendStatus(500)
+        }
+    }
+
 
 }
 

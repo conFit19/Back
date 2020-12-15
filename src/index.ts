@@ -5,7 +5,7 @@ import { authRoutes } from './routes/auth.routes';
 import { eventRoutes } from './routes/events.routes';
 import { registroRoutes } from './routes/registro.routes';
 import { userRoutes } from './routes/user.routes';
-import { merchanRoutes } from './routes/merchan.routes';
+import { MerchanRoutes } from './routes/merchan.routes';
 
 // models
 import { Users } from './models/user.model';
@@ -49,7 +49,7 @@ app.use(express.json());
 // rutas
 app.use('/registro', registroRoutes.router);
 app.use('/user', userRoutes.router);
-app.use('/merchan', merchanRoutes.router);
+app.use('/merchan', MerchanRoutes.router);
 app.use('/eventos', eventRoutes.router);
 app.use('/auth', authRoutes.router);
 app.use('/compras',comprasRoutes.router)
