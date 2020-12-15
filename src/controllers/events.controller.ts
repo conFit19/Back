@@ -17,7 +17,7 @@ class EventsController {
 
         try{
             const myEvents = await Events.findAll({ 
-                where: { organizer: req.body.organizer },
+                where: { UserId: req.params.UserId },
                 raw: true});
             res.json(myEvents);
         } catch (error) {

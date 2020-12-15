@@ -10,7 +10,7 @@ class EventRouter {
     constructor() {
         this.router.get('/', eventsController.allEvents);
         // esta filtra por organizador
-        this.router.get('/myEvents', eventsController.myEvents);
+        this.router.get('/myEvents/:UserId', eventsController.myEvents);
         this.router.post('/', eventsController.createEvent);
         this.router.delete('/:id',checkJwt('Admin'), eventsController.deleteEvent);
         this.router.put('/:id',checkJwt('Admin'), eventsController.updateEvent);

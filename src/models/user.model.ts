@@ -1,5 +1,6 @@
 import { Model, DataTypes, Sequelize} from 'sequelize';
 import { database } from "./../database";
+import { Events } from './events.model';
 
 export class Users extends Model {
 
@@ -76,3 +77,6 @@ Users.init(
         sequelize: database
     }
 );
+
+Events.belongsTo(Users);
+Users.hasMany(Events);

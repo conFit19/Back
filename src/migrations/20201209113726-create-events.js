@@ -32,8 +32,14 @@ module.exports = {
       day: {
         type: Sequelize.DATE
       },
-      organizer: {
-        type: Sequelize.STRING
+      UserId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model:'users',
+          key: 'id'
+        },
+        onUpdate: 'SET NULL',
+        onDelete: 'SET NULL'
       },
       age: {
         type: Sequelize.INTEGER

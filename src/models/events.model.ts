@@ -1,5 +1,6 @@
 import { Model, DataTypes, Sequelize} from 'sequelize';
 import { database } from "./../database";
+import { Users } from './user.model';
 
 export class Events extends Model {
 
@@ -12,7 +13,7 @@ export class Events extends Model {
     public duration!:  string;
     public type!: string;
     public day!: Date;
-    public organizer!: string;
+    public UserId!: number;
     public age!: number;
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
@@ -58,9 +59,15 @@ Events.init(
             type: new DataTypes.DATE,
             allowNull:false
         },
-        organizer: {
-            type: new DataTypes.STRING(128),
-            allowNull:true
+        UserId: {
+            type: new DataTypes.NUMBER,
+            allowNull:true,
+            references: {
+                model: Users,
+                key: 'id',
+              },
+              onUpdate: 'SET NULL',
+              onDelete: 'SET NULL',
         },
         age: {
             type: new DataTypes.NUMBER,
