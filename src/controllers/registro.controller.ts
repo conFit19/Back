@@ -25,7 +25,7 @@ class RegistroController {
 
         try{
             const registro = await Registro.findAll({
-                where: { UserId: req.body.UserId },
+                where: { UserId: req.params.UserId },
                 include: [
                     {model: Events}
                 ],

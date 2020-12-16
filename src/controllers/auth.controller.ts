@@ -12,6 +12,7 @@ class AuthController {
             const findUser = await Users.findOne({
                 where:{
                     email: req.body.email,
+                    password: req.body.password
                 }
                
             })
@@ -25,7 +26,7 @@ class AuthController {
                     expiresIn: '1h'
                     }
                 ); 
-                res.send(token); 
+                res.json(token); 
             }else{
                 res.json('Error: 404. User not found.')
             } 

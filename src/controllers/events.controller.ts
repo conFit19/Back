@@ -102,7 +102,7 @@ class EventsController {
 
     public async detailEvent(req:Request,res:Response){
         try{
-            const detail = await Events.findAll({ where: { id: req.params.id }});
+            const detail = await Events.findOne({ where: { id: req.params.id }});
             res.json(detail);
             
         }
