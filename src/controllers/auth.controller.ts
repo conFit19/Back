@@ -16,21 +16,21 @@ class AuthController {
                 }
                
             })
-            if(findUser){
-                const token = jwt.sign(
-                    {
-                        email: req.body.email
-                    },
-                    config.jwtSecret,
-                    {
-                    expiresIn: '1h'
-                    }
-                ); 
-                res.json(token); 
-            }else{
-                res.json('Error: 404. User not found.')
-            } 
-           
+            // if(findUser){
+            //     const token = jwt.sign(
+            //         {
+            //             email: req.body.email
+            //         },
+            //         config.jwtSecret,
+            //         {
+            //         expiresIn: '1h'
+            //         }
+            //     ); 
+            //     // res.json(token); 
+            // }else{
+            //     res.json('Error: 404. User not found.')
+            // } 
+           res.json(findUser)
         }catch (error) {
 
                 // res.sendStatus(404)
